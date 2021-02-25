@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1005740888822",
+    "firebase_url": "https://ncfoa-restaurant-appliction-default-rtdb.firebaseio.com",
+    "project_id": "ncfoa-restaurant-appliction",
+    "storage_bucket": "ncfoa-restaurant-appliction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005740888822:android:b3a19770bdf10b8e47d2d7",
+        "android_client_info": {
+          "package_name": "com.example.ncfoa_restaurant_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005740888822-4f9fv1gcmpe1eqh6vngcql4buoi8c9kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD423VKPVMF-ARzds-bduNY3EhDVj-PKdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005740888822-4f9fv1gcmpe1eqh6vngcql4buoi8c9kf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
