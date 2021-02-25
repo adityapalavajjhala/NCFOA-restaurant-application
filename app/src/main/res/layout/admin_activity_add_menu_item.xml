@@ -37,7 +37,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:text="Dish Name" />
 
             <EditText
-                android:id="@+id/AddDishName300"
+                android:id="@+id/AddDishName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -48,10 +48,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Type of Dish" />
+                android:text="Category of Dish" />
 
             <EditText
-                android:id="@+id/AddDishType300"
+                android:id="@+id/AddDishType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -64,7 +64,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:text="Price" />
 
             <EditText
-                android:id="@+id/AddDishPrice300"
+                android:id="@+id/AddDishPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -78,7 +78,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </LinearLayout>
 
             <Button
-                android:id="@+id/AddMenuItemButton300"
+                android:id="@+id/AddMenuItemButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

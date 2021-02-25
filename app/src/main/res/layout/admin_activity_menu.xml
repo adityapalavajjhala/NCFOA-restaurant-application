@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminPanelActivity">
+    tools:context="com.example.ncfoa_restaurant_application.admin.AdminPanelActivity">
 
 
     <Button
@@ -21,7 +21,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
