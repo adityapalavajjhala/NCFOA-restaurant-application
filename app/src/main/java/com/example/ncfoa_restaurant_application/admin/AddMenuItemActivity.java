@@ -1,6 +1,5 @@
 package com.example.ncfoa_restaurant_application.admin;
 
-
 import com.example.ncfoa_restaurant_application.R;
 
 import android.os.Bundle;
@@ -27,12 +26,9 @@ public class AddMenuItemActivity extends AppCompatActivity {
     DatabaseReference mDatabase;
 
     EditText name;
-    EditText time;
     EditText type;
     EditText price;
-    List<String> items = new ArrayList<>();
     Button addMenu;
-    ArrayList<MenuItem> menuItems = new ArrayList<>();
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,38 +43,32 @@ public class AddMenuItemActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        addMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean go = true;
-                if (name.getText().toString().length() <= 0) {
-                    name.setError("Dish Name is Required");
-                    go = false;
-                }else if (type.getText().toString().length() <= 0) {
-                    type.setError("Dish Type is Required");
-                    go = false;
-                } else if (price.getText().toString().length() <= 0) {
-                    price.setError("Price is Required");
-                    go = false;
-                }
-                if (price.getText().toString().length() > 0 && Integer.parseInt(price.getText().toString()) < 1) {
-                    price.setError("Price cannot be 0");
-                    go = false;
-
-                }
-                if (go) {
-                    //Add intent here
-                    Menu m = new Menu(name.getText().toString(), time.getText().toString(), type.getText().toString(), price.getText().toString());
-                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-                    ref.child("Menu").child(m.getDishName()).setValue(m);
-                    for (int i = 0; i < menuItems.size(); i++) {
-                        ref.child("MenuItem").child(menuItems.get(i).dishName).setValue(menuItems.get(i));
-                    }
-                    Toast.makeText(AddMenuItemActivity.this, "Menu Item Added Successfully", Toast.LENGTH_LONG).show();
-                    finish();
-                }
-
+        addMenu.setOnClickListener(v -> {
+            boolean go = true;
+            if (name.getText().toString().length() <= 0) {
+                name.setError("Dish Name is Required");
+                go = false;
+            }else if (type.getText().toString().length() <= 0) {
+                type.setError("Dish Type is Required");
+                go = false;
+            } else if (price.getText().toString().length() <= 0) {
+                price.setError("Price is Required");
+                go = false;
             }
+            if (price.getText().toString().length() > 0 && Integer.parseInt(price.getText().toString()) < 1) {
+                price.setError("Price cannot be 0");
+                go = false;
+            }
+            if (go) {
+                Menu menu = new Menu(name.getText().toString(),type.getText().toString(), price.getText().toString());
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Category");
+                DatabaseReference ref1 = ref.child(type.getText().toString());
+
+                ref1.child(menu.getDishName()).setValue(menu);
+                Toast.makeText(AddMenuItemActivity.this, "Menu Item Added Successfully", Toast.LENGTH_LONG).show();
+                finish();
+            }
+
         });
     }
 }

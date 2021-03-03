@@ -2,18 +2,13 @@ package com.example.ncfoa_restaurant_application.admin;
 
 public class Menu {
     private String dishName;
-    private String estimatedTime; //It would be stored in minutes
     String type;
     String price;
 
-    public Menu(String dishName, String estimatedTime, String type, String price) {
+    public Menu(String dishName, String type, String price) {
         this.dishName = dishName;
-        this.estimatedTime = estimatedTime;
         this.type = type;
         this.price = price;
-    }
-
-    public Menu() {
     }
 
     public String getDishName() {
@@ -22,14 +17,6 @@ public class Menu {
 
     public void setDishName(String dishName) {
         this.dishName = dishName;
-    }
-
-    public String getEstimatedTime() {
-        return estimatedTime;
-    }
-
-    public void setEstimatedTime(String estimatedTime) {
-        this.estimatedTime = estimatedTime;
     }
 
     public String getType() {
