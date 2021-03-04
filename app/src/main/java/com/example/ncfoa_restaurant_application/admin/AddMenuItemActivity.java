@@ -64,6 +64,8 @@ public class AddMenuItemActivity extends AppCompatActivity {
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Category");
                 DatabaseReference ref1 = ref.child(type.getText().toString());
 
+
+
                 ref1.child(menu.getDishName()).setValue(menu);
                 Toast.makeText(AddMenuItemActivity.this, "Menu Item Added Successfully", Toast.LENGTH_LONG).show();
                 finish();
