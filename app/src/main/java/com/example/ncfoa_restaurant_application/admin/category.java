@@ -1,9 +1,15 @@
 package com.example.ncfoa_restaurant_application.admin;
 
-public class Category {
-    private String categoryName;
+public class category {
 
-    public Category(String categoryName) {
+    String categoryName;
+
+    public category()
+    {
+
+    }
+
+    public category(String categoryName) {
         this.categoryName = categoryName;
     }
 
@@ -11,7 +17,7 @@ public class Category {
         return categoryName;
     }
 
-    public void setCategoryName(String dishName) {
+    public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
 

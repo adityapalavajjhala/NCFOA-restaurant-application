@@ -6,24 +6,28 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.ncfoa_restaurant_application.R;
-import java.util.ArrayList;
 
-public class AdminPanelActivity extends AppCompatActivity {
+public class AdminMenuManagementActivity extends AppCompatActivity {
 
     Button addMenuButton;
     Button addCategoryButton;
+    Button addMagic;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_activity_adminpanel);
+        setContentView(R.layout.admin_activity_menu_management);
 
         addMenuButton=(Button) findViewById(R.id.AddMenuItemButton);
         addMenuButton.setOnClickListener(v-> startAddMenuItem());
 
         addCategoryButton=(Button) findViewById(R.id.AddCategoryButton);
         addCategoryButton.setOnClickListener(v -> startAddCategory());
+
+        addMagic=(Button) findViewById(R.id.magic);
+        addMagic.setOnClickListener(v -> startAddMagic());
+
     }
 
     private void startAddMenuItem() {
@@ -35,5 +39,11 @@ public class AdminPanelActivity extends AppCompatActivity {
         Intent i = new Intent(this, AddCategoryActivity.class);
         startActivity(i);
     }
+
+    private void startAddMagic(){
+        Intent i = new Intent(this,CategoryActivity.class);
+        startActivity(i);;
+    }
+
 
 }

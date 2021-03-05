@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ncfoa_restaurant_application.R;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class AddCategoryActivity extends AppCompatActivity {
     DatabaseReference myRef ;
     DatabaseReference checkRef;
-    Category category;
+    com.example.ncfoa_restaurant_application.admin.category category;
 
     EditText category_name;
     Button addCategory;
@@ -36,11 +35,11 @@ public class AddCategoryActivity extends AppCompatActivity {
         addCategory.setOnClickListener(v -> {
             boolean go = true;
             if (category_name.getText().toString().length() <= 0) {
-                category_name.setError("Dish Name is Required");
+                category_name.setError("Category name is Required");
                 go = false;
             }
             if (go) {
-                category = new Category(category_name.getText().toString());
+                category = new category(category_name.getText().toString());
 
                 checkRef= FirebaseDatabase.getInstance().getReference("Category");
                 checkRef.addListenerForSingleValueEvent(new ValueEventListener() {

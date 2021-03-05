@@ -1,32 +1,25 @@
 package com.example.ncfoa_restaurant_application.admin;
 
 import com.example.ncfoa_restaurant_application.R;
-
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.google.firebase.database.ValueEventListener;
 
 public class AddMenuItemActivity extends AppCompatActivity {
 
     DatabaseReference mDatabase;
+    DatabaseReference checkitem;
 
     EditText name;
-    EditText type;
+    EditText categoryName;
     EditText price;
     Button addMenu;
 
@@ -36,7 +29,7 @@ public class AddMenuItemActivity extends AppCompatActivity {
         setContentView(R.layout.admin_activity_add_menu_item);
 
         name = findViewById(R.id.AddDishName);
-        type = findViewById(R.id.AddDishType);
+        categoryName = findViewById(R.id.AddDishType);
         price = findViewById(R.id.AddDishPrice);
         addMenu = findViewById(R.id.AddMenuItemButton);
 
@@ -48,8 +41,8 @@ public class AddMenuItemActivity extends AppCompatActivity {
             if (name.getText().toString().length() <= 0) {
                 name.setError("Dish Name is Required");
                 go = false;
-            }else if (type.getText().toString().length() <= 0) {
-                type.setError("Dish Type is Required");
+            }else if (categoryName.getText().toString().length() <= 0) {
+                categoryName.setError("Dish Category is Required");
                 go = false;
             } else if (price.getText().toString().length() <= 0) {
                 price.setError("Price is Required");
@@ -60,14 +53,26 @@ public class AddMenuItemActivity extends AppCompatActivity {
                 go = false;
             }
             if (go) {
-                Menu menu = new Menu(name.getText().toString(),type.getText().toString(), price.getText().toString());
+                Menu menu = new Menu(name.getText().toString(),categoryName.getText().toString(), price.getText().toString());
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Category");
-                DatabaseReference ref1 = ref.child(type.getText().toString());
+                DatabaseReference ref1 = ref.child(categoryName.getText().toString());
 
-
-
-                ref1.child(menu.getDishName()).setValue(menu);
-                Toast.makeText(AddMenuItemActivity.this, "Menu Item Added Successfully", Toast.LENGTH_LONG).show();
+                checkitem =  ref.child(categoryName.getText().toString());
+                checkitem.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.child(name.getText().toString()).exists()) {
+                            Toast.makeText(AddMenuItemActivity.this, "Menu Item already present", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            ref1.child(menu.getDishName()).setValue(menu);
+                            Toast.makeText(AddMenuItemActivity.this, "Menu Item Added Successfully", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
                 finish();
             }
 

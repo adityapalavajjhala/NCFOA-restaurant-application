@@ -1,34 +1,30 @@
 package com.example.ncfoa_restaurant_application.admin;
 
-public class Menu {
-    private String dishName;
-    String categoryName;
+public class model {
+    String dishname;
     String price;
     String description;
     String purl;
+    String type;
 
-    public Menu(String dishName, String type, String price) {
-        this.dishName = dishName;
-        this.categoryName = type;
+    public model(){
+
+    }
+
+    public model(String dishname, String price, String description, String purl,String type) {
+        this.dishname = dishname;
         this.price = price;
         this.description= description;
         this.purl= purl;
+        this.type= type;
     }
 
     public String getDishName() {
-        return dishName;
+        return dishname;
     }
 
     public void setDishName(String dishName) {
-        this.dishName = dishName;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String type) {
-        this.categoryName = categoryName;
+        this.dishname = dishName;
     }
 
     public String getPrice() {
@@ -54,4 +50,8 @@ public class Menu {
     public void setPurl(String purl) {
         this.purl = purl;
     }
+
+    public String getType(){ return type;}
+
+    public void setType(String type) { this.type = type;}
 }
