@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class adddata extends AppCompatActivity
+public class menuadddata extends AppCompatActivity
 {
     EditText dishname,price,description,purl,type;
     Button submit,back;
@@ -24,7 +24,7 @@ public class adddata extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adddata);
+        setContentView(R.layout.activity_add_menu);
 
         dishname= findViewById(R.id.add_dishname);
         price= findViewById(R.id.add_price);
@@ -50,7 +50,7 @@ public class adddata extends AppCompatActivity
         map.put("description",description.getText().toString());
         map.put("purl",purl.getText().toString());
         map.put("type",type.getText().toString());
-        FirebaseDatabase.getInstance().getReference().child("Category").child(type.getText().toString())
+        FirebaseDatabase.getInstance().getReference().child("Testing").child(type.getText().toString())
                 .setValue(map)
                 .addOnSuccessListener(aVoid -> {
                     dishname.setText("");

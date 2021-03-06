@@ -71,7 +71,6 @@ public class categoryadapter extends FirebaseRecyclerAdapter<category,categoryad
                 Map<String,Object> map=new HashMap<>();
                 map.put("categoryName",categoryName.getText().toString());
 
-
                 FirebaseDatabase.getInstance().getReference().child("Category")
                         .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
                         .addOnSuccessListener(aVoid -> dialogPlus.dismiss())

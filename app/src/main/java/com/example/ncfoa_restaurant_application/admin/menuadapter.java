@@ -1,19 +1,14 @@
 package com.example.ncfoa_restaurant_application.admin;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.example.ncfoa_restaurant_application.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,33 +16,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
-import com.orhanobut.dialogplus.DialogPlusBuilder;
 import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Handler;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewholder>
+public class menuadapter extends FirebaseRecyclerAdapter<menu, menuadapter.myviewholder>
 {
-    public myadapter(@NonNull FirebaseRecyclerOptions<model> options)
+    public menuadapter(@NonNull FirebaseRecyclerOptions<menu> options)
     {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final model model)
+    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final menu model)
     {
         holder.dishname.setText(model.getDishName());
         holder.price.setText(model.getPrice());
@@ -90,7 +76,7 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
                 map.put("type",type.getText().toString());
 
 
-                FirebaseDatabase.getInstance().getReference().child("students")
+                FirebaseDatabase.getInstance().getReference().child("Testing").child(type.getText().toString())
                         .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
                         .addOnSuccessListener(aVoid -> dialogPlus.dismiss())
                         .addOnFailureListener(e -> dialogPlus.dismiss());
@@ -105,7 +91,7 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
             builder.setTitle("Delete Panel");
             builder.setMessage("Do you want to delete the Dish Item ?");
 
-            builder.setPositiveButton("Yes", (dialogInterface, i) -> FirebaseDatabase.getInstance().getReference().child("students")
+            builder.setPositiveButton("Yes", (dialogInterface, i) -> FirebaseDatabase.getInstance().getReference().child("Testing")
                     .child(getRef(position).getKey()).removeValue());
 
             builder.setNegativeButton("No", (dialogInterface, i) -> {
