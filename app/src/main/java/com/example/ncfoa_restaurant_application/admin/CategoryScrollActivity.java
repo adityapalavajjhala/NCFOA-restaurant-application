@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.SearchView;
 
 import com.example.ncfoa_restaurant_application.R;
 
@@ -16,7 +13,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class CategoryActivity extends  AppCompatActivity{
+public class CategoryScrollActivity extends  AppCompatActivity{
     RecyclerView recview1;
     categoryadapter adapter1;
     FloatingActionButton fb1;
@@ -24,7 +21,7 @@ public class CategoryActivity extends  AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_activity_categry_activity);
+        setContentView(R.layout.activity_add_category);
 
         recview1=(RecyclerView)findViewById(R.id.recview1);
         recview1.setLayoutManager(new LinearLayoutManager(this));

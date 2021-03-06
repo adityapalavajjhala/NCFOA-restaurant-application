@@ -18,13 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".admin.AddMenuItemActivity">
-        </activity>
-        <activity android:name=".admin.AddCategoryActivity" />
         <activity android:name=".admin.MenuScrollActivity" />
-        <activity android:name=".admin.adddata" />
-        <activity android:name=".admin.AddEmployeeActivity" />
-        <activity android:name=".admin.CategoryActivity"/>
+        <activity android:name=".admin.menuadddata" />
+        <activity android:name=".admin.CategoryScrollActivity"/>
         <activity android:name=".admin.categoryadddata"/>
     </application>
 

@@ -42,7 +42,7 @@ public class categoryadddata extends AppCompatActivity
     {
         Map<String,Object> map=new HashMap<>();
         map.put("categoryName",categoryName.getText().toString());
-        FirebaseDatabase.getInstance().getReference().child("Category").child(categoryName.getText().toString())
+        FirebaseDatabase.getInstance().getReference().child("Category")
                 .setValue(map)
                 .addOnSuccessListener(aVoid -> {
                     categoryName.setText("");
