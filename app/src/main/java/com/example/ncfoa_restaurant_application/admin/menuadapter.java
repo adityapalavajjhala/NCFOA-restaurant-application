@@ -76,7 +76,7 @@ public class menuadapter extends FirebaseRecyclerAdapter<menu, menuadapter.myvie
                 map.put("type",type.getText().toString());
 
 
-                FirebaseDatabase.getInstance().getReference().child("Testing").child(type.getText().toString())
+                FirebaseDatabase.getInstance().getReference().child("Testing")
                         .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
                         .addOnSuccessListener(aVoid -> dialogPlus.dismiss())
                         .addOnFailureListener(e -> dialogPlus.dismiss());

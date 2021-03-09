@@ -50,7 +50,7 @@ public class menuadddata extends AppCompatActivity
         map.put("description",description.getText().toString());
         map.put("purl",purl.getText().toString());
         map.put("type",type.getText().toString());
-        FirebaseDatabase.getInstance().getReference().child("Testing").child(type.getText().toString())
+        FirebaseDatabase.getInstance().getReference().child("Testing")
                 .setValue(map)
                 .addOnSuccessListener(aVoid -> {
                     dishname.setText("");
