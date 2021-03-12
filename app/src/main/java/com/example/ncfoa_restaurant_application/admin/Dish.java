@@ -1,17 +1,17 @@
 package com.example.ncfoa_restaurant_application.admin;
 
-public class menu {
+public class Dish {
     String dishname;
     String price;
     String description;
     String purl;
     String type;
 
-    public menu(){
+    public Dish(){
 
     }
 
-    public menu(String dishname, String price, String description, String purl, String type) {
+    public Dish(String dishname, String price, String description, String purl, String type) {
         this.dishname = dishname;
         this.price = price;
         this.description= description;

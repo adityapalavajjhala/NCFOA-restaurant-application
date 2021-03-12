@@ -2,6 +2,7 @@ package com.example.ncfoa_restaurant_application.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,24 +20,13 @@ public class AdminMenuManagementActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_activity_menu_management);
-
-        addcategory=(Button) findViewById(R.id.addcategory);
-        addcategory.setOnClickListener(v -> startAddCategory());
-
-        addmenu= findViewById(R.id.addmenu);
-        addmenu.setOnClickListener(v -> startAddMenu());
     }
 
-    private void startAddMenu() {
-        Intent i= new Intent(this,MenuScrollActivity.class);
-        startActivity(i);
+    public void startAddMenu(View view) {
+        startActivity(new Intent(this,MenuScrollActivity.class));
     }
 
-    private void startAddCategory(){
-        Intent i = new Intent(this, CategoryScrollActivity.class);
-        startActivity(i);;
+    public void startAddCategory(View view) {
+        startActivity(new Intent(this, CategoryScrollActivity.class));
     }
-
-
-
 }

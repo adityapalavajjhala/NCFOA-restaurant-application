@@ -25,15 +25,15 @@ import java.util.Map;
 import java.util.Objects;
 
 
-public class menuadapter extends FirebaseRecyclerAdapter<menu, menuadapter.myviewholder>
+public class DishAdapter extends FirebaseRecyclerAdapter<Dish, DishAdapter.myviewholder>
 {
-    public menuadapter(@NonNull FirebaseRecyclerOptions<menu> options)
+    public DishAdapter(@NonNull FirebaseRecyclerOptions<Dish> options)
     {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final menu model)
+    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final Dish model)
     {
         holder.dishname.setText(model.getDishName());
         holder.price.setText(model.getPrice());

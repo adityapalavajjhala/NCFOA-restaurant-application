@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="40"
-                android:text="This is Dish Name"
+                android:text="This is Category Name"
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />

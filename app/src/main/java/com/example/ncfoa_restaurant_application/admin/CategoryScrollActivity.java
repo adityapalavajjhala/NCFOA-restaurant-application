@@ -6,48 +6,48 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.ncfoa_restaurant_application.R;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class CategoryScrollActivity extends  AppCompatActivity{
-    RecyclerView recview1;
-    categoryadapter adapter1;
-    FloatingActionButton fb1;
+    RecyclerView rv;
+    CategoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
+        addRecyclerView();
+    }
 
-        recview1=(RecyclerView)findViewById(R.id.recview1);
-        recview1.setLayoutManager(new LinearLayoutManager(this));
-
-        FirebaseRecyclerOptions<category> options1 = new FirebaseRecyclerOptions.Builder<category>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("Category"), category.class)
+    private void addRecyclerView() {
+        rv =findViewById(R.id.recview1);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        FirebaseRecyclerOptions<Category> options1 = null;
+        options1 = new FirebaseRecyclerOptions.Builder<Category>()
+                .setQuery(FirebaseDatabase.getInstance().getReference("Category"), Category.class)
                 .build();
-
-        adapter1=new categoryadapter(options1);
-        recview1.setAdapter(adapter1);
-
-        fb1= findViewById(R.id.fadd1);
-        fb1.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),categoryadddata.class)));
-
+        adapter =new CategoryAdapter(options1);
+        rv.setAdapter(adapter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        adapter1.startListening();
+        adapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter1.stopListening();
+        adapter.stopListening();
     }
 
+    public void floatingActionButtonClick(View view) {
+        startActivity(new Intent(getApplicationContext(),CategoryAddData.class));
+    }
 }

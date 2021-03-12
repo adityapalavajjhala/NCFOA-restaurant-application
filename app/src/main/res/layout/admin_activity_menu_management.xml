@@ -17,6 +17,7 @@
         app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="startAddCategory"
         app:layout_constraintVertical_bias="0.533" />
 
     <Button
@@ -29,6 +30,7 @@
         app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="startAddMenu"
         app:layout_constraintVertical_bias="0.533" />
 
 

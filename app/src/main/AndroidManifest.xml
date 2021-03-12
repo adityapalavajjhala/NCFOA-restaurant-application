@@ -19,9 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".admin.MenuScrollActivity" />
-        <activity android:name=".admin.menuadddata" />
+        <activity android:name=".admin.DishAddData" />
         <activity android:name=".admin.CategoryScrollActivity"/>
-        <activity android:name=".admin.categoryadddata"/>
+        <activity android:name=".admin.CategoryAddData"/>
     </application>
 
 </manifest>

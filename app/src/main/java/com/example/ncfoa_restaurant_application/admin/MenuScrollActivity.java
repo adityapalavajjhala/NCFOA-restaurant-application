@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
@@ -20,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MenuScrollActivity extends AppCompatActivity
 {
     RecyclerView recview;
-    menuadapter adapter;
+    DishAdapter adapter;
     FloatingActionButton fb;
 
     @Override
@@ -32,15 +31,15 @@ public class MenuScrollActivity extends AppCompatActivity
         recview=(RecyclerView)findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<menu> options = new FirebaseRecyclerOptions.Builder<menu>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("Testing"), menu.class)
+        FirebaseRecyclerOptions<Dish> options = new FirebaseRecyclerOptions.Builder<Dish>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("Category"), Dish.class)
                 .build();
 
-        adapter=new menuadapter(options);
+        adapter=new DishAdapter(options);
         recview.setAdapter(adapter);
 
         fb= findViewById(R.id.fadd);
-        fb.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), menuadddata.class)));
+        fb.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), DishAddData.class)));
 
     }
 
@@ -58,7 +57,7 @@ public class MenuScrollActivity extends AppCompatActivity
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    public boolean onCreateOptionsMenu(android.view.Menu menu)
     {
         getMenuInflater().inflate(R.menu.searchmenu,menu);
 
@@ -87,12 +86,12 @@ public class MenuScrollActivity extends AppCompatActivity
 
     private void processsearch(String s)
     {
-        FirebaseRecyclerOptions<menu> options =
-                new FirebaseRecyclerOptions.Builder<menu>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Category").startAt(s).endAt(s+"\uf8ff"), menu.class)
+        FirebaseRecyclerOptions<Dish> options =
+                new FirebaseRecyclerOptions.Builder<Dish>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Category").startAt(s).endAt(s+"\uf8ff"), Dish.class)
                         .build();
 
-        adapter=new menuadapter(options);
+        adapter=new DishAdapter(options);
         adapter.startListening();
         recview.setAdapter(adapter);
 

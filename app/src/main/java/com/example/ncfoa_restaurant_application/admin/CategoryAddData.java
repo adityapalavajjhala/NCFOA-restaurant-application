@@ -10,12 +10,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ncfoa_restaurant_application.R;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class categoryadddata extends AppCompatActivity
+public class CategoryAddData extends AppCompatActivity
 {
     EditText categoryName;
     Button submit,back;
@@ -40,15 +41,20 @@ public class categoryadddata extends AppCompatActivity
 
     private void processinsert()
     {
-        Map<String,Object> map=new HashMap<>();
-        map.put("categoryName",categoryName.getText().toString());
-        FirebaseDatabase.getInstance().getReference().child("Category")
-                .setValue(map)
-                .addOnSuccessListener(aVoid -> {
-                    categoryName.setText("");
-                    Toast.makeText(getApplicationContext(),"Inserted Successfully",Toast.LENGTH_LONG).show();
-                })
-                .addOnFailureListener(e -> Toast.makeText(getApplicationContext(),"Could not insert",Toast.LENGTH_LONG).show());
+        try {
+            DatabaseReference db=FirebaseDatabase.getInstance().getReference("Category").child(categoryName.getText().toString().trim());
+            Category category=new Category();
+            category.setCategoryName(categoryName.getText().toString().trim());
+            FirebaseDatabase.getInstance().getReference("Category").child(categoryName.getText().toString().trim())
+                    .setValue(category)
+                    .addOnSuccessListener(aVoid -> {
+                        categoryName.setText("");
+                        Toast.makeText(getApplicationContext(),"Inserted Successfully",Toast.LENGTH_LONG).show();
+                    })
+                    .addOnFailureListener(e -> Toast.makeText(getApplicationContext(),"Could not insert",Toast.LENGTH_LONG).show());
 
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 }
