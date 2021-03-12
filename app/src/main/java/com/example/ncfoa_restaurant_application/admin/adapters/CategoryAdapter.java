@@ -57,12 +57,12 @@ public class CategoryAdapter extends FirebaseRecyclerAdapter<Category, CategoryA
     private void editCategory(@NonNull CategoryViewHolder holder, int position, @NonNull Category category) {
         DialogPlus dialogPlus=DialogPlus.newDialog(holder.edit.getContext())
                 .setContentHolder(new ViewHolder(R.layout.category_dialogcontent))
-                .setExpanded(true,1100)
+                .setExpanded(true)
                 .create();
 
         View myview=dialogPlus.getHolderView();
         final EditText categoryName=myview.findViewById(R.id.ucategory);
-        Button submit=myview.findViewById(R.id.usubmit1);
+        Button submit=myview.findViewById(R.id.categoryUpdate);
         categoryName.setText(category.getCategoryName());
         dialogPlus.show();
 
