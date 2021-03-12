@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ncfoa_restaurant_application.admin.AdminMenuManagementActivity">
+    tools:context="com.example.ncfoa_restaurant_application.admin.activities.AdminMenuManagementActivity">
 
 
     <Button
@@ -17,6 +17,7 @@
         app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="startAddCategory"
         app:layout_constraintVertical_bias="0.533" />
 
     <Button
@@ -29,6 +30,7 @@
         app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="startAddMenu"
         app:layout_constraintVertical_bias="0.533" />
 
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".admin.menuadddata">
+    tools:context=".admin.activities.DishAddDataActivity">
 
 
     <EditText
@@ -53,13 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:id="@+id/add_submit"
+        android:onClick="insertDish"
         android:text="Add to MENU"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/add_back"
+        android:onClick="backClick"
         android:text="Back"/>
 
 

@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.adapters;
 
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.ncfoa_restaurant_application.admin.model.Dish;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,15 +26,15 @@ import java.util.Map;
 import java.util.Objects;
 
 
-public class menuadapter extends FirebaseRecyclerAdapter<menu, menuadapter.myviewholder>
+public class DishAdapter extends FirebaseRecyclerAdapter<Dish, DishAdapter.myviewholder>
 {
-    public menuadapter(@NonNull FirebaseRecyclerOptions<menu> options)
+    public DishAdapter(@NonNull FirebaseRecyclerOptions<Dish> options)
     {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final menu model)
+    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final Dish model)
     {
         holder.dishname.setText(model.getDishName());
         holder.price.setText(model.getPrice());

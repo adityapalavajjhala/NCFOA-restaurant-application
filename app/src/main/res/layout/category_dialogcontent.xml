@@ -32,7 +32,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="Update"
-            android:id="@+id/usubmit1"
+            android:id="@+id/categoryUpdate"
             android:background="@color/colorPrimary"
             android:textColor="#fff"
             android:layout_gravity="center"

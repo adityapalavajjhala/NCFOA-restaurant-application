@@ -1,8 +1,9 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.activities;
 
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,10 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class menuadddata extends AppCompatActivity
+public class DishAddDataActivity extends AppCompatActivity
 {
     EditText dishname,price,description,purl,type;
-    Button submit,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,24 +26,23 @@ public class menuadddata extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_menu);
 
+        initializeVariables();
+
+    }
+
+    private void initializeVariables() {
         dishname= findViewById(R.id.add_dishname);
         price= findViewById(R.id.add_price);
         description=findViewById(R.id.add_description);
         type=findViewById(R.id.add_type);
         purl= findViewById(R.id.add_purl);
-
-        back= findViewById(R.id.add_back);
-        back.setOnClickListener(view -> {
-            startActivity(new Intent(getApplicationContext(),MenuScrollActivity.class));
-            finish();
-        });
-
-        submit= findViewById(R.id.add_submit);
-        submit.setOnClickListener(view -> processinsert());
     }
 
-    private void processinsert()
-    {
+    public void backClick(View view) {
+        finish();
+    }
+
+    public void insertDish(View view) {
         Map<String,Object> map=new HashMap<>();
         map.put("dishname",dishname.getText().toString());
         map.put("price",price.getText().toString());
@@ -61,6 +60,5 @@ public class menuadddata extends AppCompatActivity
                     Toast.makeText(getApplicationContext(),"Inserted Successfully",Toast.LENGTH_LONG).show();
                 })
                 .addOnFailureListener(e -> Toast.makeText(getApplicationContext(),"Could not insert",Toast.LENGTH_LONG).show());
-
     }
 }
