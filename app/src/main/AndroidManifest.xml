@@ -12,16 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NCFOArestaurantapplication">
-        <activity android:name=".admin.AdminMenuManagementActivity">
+        <activity android:name=".admin.activities.AdminMenuManagementActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".admin.MenuScrollActivity" />
-        <activity android:name=".admin.DishAddData" />
-        <activity android:name=".admin.CategoryScrollActivity"/>
-        <activity android:name=".admin.CategoryAddData"/>
+        <activity android:name=".admin.activities.MenuScrollActivity" />
+        <activity android:name=".admin.activities.DishAddDataActivity" />
+        <activity android:name=".admin.activities.CategoryScrollActivity"/>
+        <activity android:name=".admin.activities.CategoryAddDataActivity"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.activities;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.SearchView;
 
 import com.example.ncfoa_restaurant_application.R;
 
+import com.example.ncfoa_restaurant_application.admin.adapters.DishAdapter;
+import com.example.ncfoa_restaurant_application.admin.model.Dish;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
@@ -39,7 +41,7 @@ public class MenuScrollActivity extends AppCompatActivity
         recview.setAdapter(adapter);
 
         fb= findViewById(R.id.fadd);
-        fb.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), DishAddData.class)));
+        fb.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), DishAddDataActivity.class)));
 
     }
 

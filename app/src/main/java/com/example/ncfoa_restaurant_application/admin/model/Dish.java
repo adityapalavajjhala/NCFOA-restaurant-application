@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.model;
 
 public class Dish {
     String dishname;

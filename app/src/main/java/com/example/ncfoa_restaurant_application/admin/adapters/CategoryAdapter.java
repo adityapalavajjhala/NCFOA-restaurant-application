@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.adapters;
 
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import com.example.ncfoa_restaurant_application.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ncfoa_restaurant_application.admin.model.Category;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;

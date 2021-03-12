@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.activities;
 
 
 import android.content.Intent;
@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DishAddData extends AppCompatActivity
+public class DishAddDataActivity extends AppCompatActivity
 {
     EditText dishname,price,description,purl,type;
 

@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

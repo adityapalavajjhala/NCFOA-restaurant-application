@@ -1,4 +1,4 @@
-package com.example.ncfoa_restaurant_application.admin;
+package com.example.ncfoa_restaurant_application.admin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +10,8 @@ import android.view.View;
 
 import com.example.ncfoa_restaurant_application.R;
 
+import com.example.ncfoa_restaurant_application.admin.adapters.CategoryAdapter;
+import com.example.ncfoa_restaurant_application.admin.model.Category;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -48,6 +50,6 @@ public class CategoryScrollActivity extends  AppCompatActivity{
     }
 
     public void floatingActionButtonClick(View view) {
-        startActivity(new Intent(getApplicationContext(),CategoryAddData.class));
+        startActivity(new Intent(getApplicationContext(), CategoryAddDataActivity.class));
     }
 }
