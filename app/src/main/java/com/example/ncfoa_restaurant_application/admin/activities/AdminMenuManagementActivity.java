@@ -10,9 +10,6 @@ import com.example.ncfoa_restaurant_application.R;
 
 public class AdminMenuManagementActivity extends AppCompatActivity {
 
-    Button addcategory;
-    Button addmenu;
-
     // Edited the files such that all the category items are pushed under Category node
     // and all the menu items are pushed under Testing node.
 
@@ -29,4 +26,11 @@ public class AdminMenuManagementActivity extends AppCompatActivity {
     public void startAddCategory(View view) {
         startActivity(new Intent(this, CategoryScrollActivity.class));
     }
+
+
+    public void startOrder(View view) {
+        startActivity(new Intent(this, OrderStatus.class));
+    }
+
+
 }

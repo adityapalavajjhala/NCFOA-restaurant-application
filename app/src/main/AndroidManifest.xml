@@ -22,6 +22,7 @@
         <activity android:name=".admin.activities.DishAddDataActivity" />
         <activity android:name=".admin.activities.CategoryScrollActivity"/>
         <activity android:name=".admin.activities.CategoryAddDataActivity"/>
+        <activity android:name=".admin.activities.OrderStatus"/>
     </application>
 
 </manifest>

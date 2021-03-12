@@ -35,9 +35,7 @@ public class CategoryAdapter extends FirebaseRecyclerAdapter<Category, CategoryA
     protected void onBindViewHolder(@NonNull final CategoryViewHolder holder, final int position, @NonNull final Category category)
     {
         holder.categoryName.setText(category.getCategoryName());
-
         holder.edit.setOnClickListener(view -> {editCategory(holder, position, category);});
-
         holder.delete.setOnClickListener(view -> {deleteCategory(holder, position);});
 
     }
@@ -45,7 +43,7 @@ public class CategoryAdapter extends FirebaseRecyclerAdapter<Category, CategoryA
     private void deleteCategory(@NonNull CategoryViewHolder holder, int position) {
         AlertDialog.Builder builder=new AlertDialog.Builder(holder.delete.getContext());
         builder.setTitle("Delete Panel");
-        builder.setMessage("Do you want to delete the Dish Item ?");
+        builder.setMessage("Do you want to delete this category ?");
         builder.setPositiveButton("Yes", (dialogInterface, i) -> FirebaseDatabase.getInstance().getReference().child("Category")
                 .child(getRef(position).getKey()).removeValue());
         builder.setNegativeButton("No", (dialogInterface, i) -> {
