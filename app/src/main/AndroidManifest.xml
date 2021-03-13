@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".admin.activities.MenuScrollActivity" />
+        <activity android:name=".admin.activities.DishScrollActivity" />
         <activity android:name=".admin.activities.DishAddDataActivity" />
         <activity android:name=".admin.activities.CategoryScrollActivity"/>
         <activity android:name=".admin.activities.CategoryAddDataActivity"/>

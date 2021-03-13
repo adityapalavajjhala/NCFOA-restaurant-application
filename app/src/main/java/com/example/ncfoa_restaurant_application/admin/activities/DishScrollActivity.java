@@ -18,7 +18,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MenuScrollActivity extends AppCompatActivity
+public class DishScrollActivity extends AppCompatActivity
 {
     RecyclerView recview;
     DishAdapter adapter;

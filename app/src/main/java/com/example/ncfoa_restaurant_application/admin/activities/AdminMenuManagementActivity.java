@@ -23,7 +23,7 @@ public class AdminMenuManagementActivity extends AppCompatActivity {
     }
 
     public void startAddMenu(View view) {
-        startActivity(new Intent(this,MenuScrollActivity.class));
+        startActivity(new Intent(this, DishScrollActivity.class));
     }
 
     public void startAddCategory(View view) {
