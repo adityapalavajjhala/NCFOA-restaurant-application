@@ -46,5 +46,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.681" />
 
+    <Button
+        android:id="@+id/kitchenstaff"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:onClick="startPreparation"
+        android:text="Kitchen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

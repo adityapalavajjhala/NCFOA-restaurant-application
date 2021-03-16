@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dishnametext"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Name of the dish"
+                android:textAlignment="viewEnd"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:text="x" />
+
+            <TextView
+                android:id="@+id/dishquantitytext"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:textAlignment="viewStart"
+                android:text="Q" />
+
+            <TextView
+                android:id="@+id/dishpricetext"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:text="Price" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.ncfoa_restaurant_application.R;
 import androidx.annotation.NonNull;
@@ -14,15 +15,17 @@ import com.example.ncfoa_restaurant_application.admin.model.Request;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class OrderAdapter extends FirebaseRecyclerAdapter<Request, OrderAdapter.OrderViewHolder>
+import org.w3c.dom.Text;
+
+public class KitchenStaffAdapter extends FirebaseRecyclerAdapter<Request, KitchenStaffAdapter.StaffOrderViewHolder>
 {
-    public OrderAdapter(@NonNull FirebaseRecyclerOptions<Request> options1)
+    public KitchenStaffAdapter(@NonNull FirebaseRecyclerOptions<Request> options1)
     {
         super(options1);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull OrderAdapter.OrderViewHolder holder, int position, @NonNull Request request) {
+    protected void onBindViewHolder(@NonNull KitchenStaffAdapter.StaffOrderViewHolder holder, int position, @NonNull Request request) {
 
         holder.phone.setText(request.getPhone());
         holder.name.setText(request.getName());
@@ -32,17 +35,21 @@ public class OrderAdapter extends FirebaseRecyclerAdapter<Request, OrderAdapter.
 
     @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewc)
+    public StaffOrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewc)
     {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.order_singlerow,parent,false);
-        return new OrderViewHolder(view);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.kitchen_order_singlerow,parent,false);
+
+        return new StaffOrderViewHolder(view);
     }
 
-    static class OrderViewHolder extends RecyclerView.ViewHolder
+    static class StaffOrderViewHolder extends RecyclerView.ViewHolder
     {
-        TextView phone,name,status,table;
+        TextView phone,name,status,table,textView;
         RecyclerView recyclerView;
-        public OrderViewHolder(@NonNull View itemView)
+        ToggleButton toggleButton;
+
+
+        public StaffOrderViewHolder(@NonNull View itemView)
         {
             super(itemView);
             phone= itemView.findViewById(R.id.phonetext);
@@ -50,7 +57,12 @@ public class OrderAdapter extends FirebaseRecyclerAdapter<Request, OrderAdapter.
             table=itemView.findViewById(R.id.tabletext);
             status= itemView.findViewById(R.id.statustext);
             recyclerView =itemView.findViewById(R.id.recyclerview);
+            toggleButton = itemView.findViewById(R.id.toggleButton);
+            textView = itemView.findViewById(R.id.textview);
+
         }
+
+
     }
 
 

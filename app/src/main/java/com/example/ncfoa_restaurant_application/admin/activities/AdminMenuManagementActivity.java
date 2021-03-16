@@ -33,4 +33,7 @@ public class AdminMenuManagementActivity extends AppCompatActivity {
     }
 
 
+    public void startPreparation(View view) {
+        startActivity(new Intent(this,KitchenStaff.class));
+    }
 }

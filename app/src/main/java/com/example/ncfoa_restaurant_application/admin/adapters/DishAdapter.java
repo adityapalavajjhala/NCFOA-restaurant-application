@@ -37,7 +37,7 @@ public class DishAdapter extends FirebaseRecyclerAdapter<Dish, DishAdapter.myvie
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final Dish model)
     {
         holder.dishname.setText(model.getDishName());
-        holder.price.setText(model.getPrice());
+        holder.price.setText((int) model.getPrice());
         holder.description.setText(model.getDescription());
         holder.type.setText(model.getType());
 
@@ -62,7 +62,7 @@ public class DishAdapter extends FirebaseRecyclerAdapter<Dish, DishAdapter.myvie
 
             purl.setText(model.getPurl());
             dishname.setText(model.getDishName());
-            price.setText(model.getPrice());;
+            price.setText((int) model.getPrice());;
             description.setText(model.getDescription());
             type.setText(model.getType());
 
