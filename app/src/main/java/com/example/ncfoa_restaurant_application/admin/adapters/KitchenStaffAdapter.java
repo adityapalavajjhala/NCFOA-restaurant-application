@@ -3,6 +3,7 @@ package com.example.ncfoa_restaurant_application.admin.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -31,6 +32,7 @@ public class KitchenStaffAdapter extends FirebaseRecyclerAdapter<Request, Kitche
         holder.name.setText(request.getName());
         holder.status.setText(request.getStatus());
         holder.table.setText(request.getTable());
+        holder.prepared.setText(request.getTable());
     }
 
     @NonNull
@@ -44,9 +46,9 @@ public class KitchenStaffAdapter extends FirebaseRecyclerAdapter<Request, Kitche
 
     static class StaffOrderViewHolder extends RecyclerView.ViewHolder
     {
-        TextView phone,name,status,table,textView;
+        TextView phone,name,status,table;
         RecyclerView recyclerView;
-        ToggleButton toggleButton;
+        Button prepared;
 
 
         public StaffOrderViewHolder(@NonNull View itemView)
@@ -57,8 +59,7 @@ public class KitchenStaffAdapter extends FirebaseRecyclerAdapter<Request, Kitche
             table=itemView.findViewById(R.id.tabletext);
             status= itemView.findViewById(R.id.statustext);
             recyclerView =itemView.findViewById(R.id.recyclerview);
-            toggleButton = itemView.findViewById(R.id.toggleButton);
-            textView = itemView.findViewById(R.id.textview);
+            prepared=itemView.findViewById(R.id.prepared);
 
         }
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.ncfoa_restaurant_application.R;
+import com.example.ncfoa_restaurant_application.admin.adapters.KitchenStaffAdapter;
 import com.example.ncfoa_restaurant_application.admin.adapters.OrderAdapter;
 import com.example.ncfoa_restaurant_application.admin.model.Request;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -14,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class KitchenStaff extends AppCompatActivity{
     RecyclerView recyclerView;
-    OrderAdapter orderAdapter;
+    KitchenStaffAdapter kitchenStaffAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +31,20 @@ public class KitchenStaff extends AppCompatActivity{
         options1 = new FirebaseRecyclerOptions.Builder<Request>()
                 .setQuery(FirebaseDatabase.getInstance().getReference("Request"), Request.class)
                 .build();
-        orderAdapter =new OrderAdapter(options1);
-        recyclerView.setAdapter(orderAdapter);
+        kitchenStaffAdapter =new KitchenStaffAdapter(options1);
+        recyclerView.setAdapter(kitchenStaffAdapter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        orderAdapter.startListening();
+        kitchenStaffAdapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        orderAdapter.stopListening();
+        kitchenStaffAdapter.stopListening();
     }
 
 }

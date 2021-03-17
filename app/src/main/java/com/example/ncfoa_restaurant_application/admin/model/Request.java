@@ -17,7 +17,7 @@ public class Request {
         this.name = name;
         this.foods = foods;
         this.table= table;
-        this.status = status; //Default is 0, 0: Placed, 1: Preparing , 2: Delivered
+        this.status = status; //Default is 0, 0: Placed, 1: Prepared , 2: Delivered
     }
 
     public String getStatus() {

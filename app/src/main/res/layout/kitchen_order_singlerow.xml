@@ -112,21 +112,13 @@
                 android:paddingBottom="10dp"
                 android:weightSum="100">
 
-                <ToggleButton
-                    android:id="@+id/toggleButton"
+                <Button
+                    android:id="@+id/prepared"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:onClick="onToggleClick"
-                    />
-                <TextView
-                    android:id="@+id/textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Status Toggle"
-                    android:textColor="#000" />
+                    android:text="Prepared" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
