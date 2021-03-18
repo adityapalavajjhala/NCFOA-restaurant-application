@@ -23,6 +23,7 @@
         <activity android:name=".admin.activities.CategoryScrollActivity"/>
         <activity android:name=".admin.activities.CategoryAddDataActivity"/>
         <activity android:name=".admin.activities.OrderStatus"/>
+        <activity android:name=".admin.activities.KitchenStaff"/>
     </application>
 
 </manifest>

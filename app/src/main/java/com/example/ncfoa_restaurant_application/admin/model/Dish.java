@@ -9,7 +9,8 @@ public class Dish {
     long quantity;
     String dishid;
 
-    public Dish(){
+    public Dish()
+    {
 
     }
 
@@ -27,8 +28,8 @@ public class Dish {
         return dishname;
     }
 
-    public void setDishName(String dishName) {
-        this.dishname = dishName;
+    public void setDishName(String dishname) {
+        this.dishname = dishname;
     }
 
     public long getPrice() {

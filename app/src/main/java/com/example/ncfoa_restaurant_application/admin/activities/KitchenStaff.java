@@ -20,7 +20,7 @@ public class KitchenStaff extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_status);
+        setContentView(R.layout.activity_kitchen_staff);
         addRecyclerView();
     }
 

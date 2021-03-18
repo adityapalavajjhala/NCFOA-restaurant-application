@@ -9,7 +9,9 @@ public class Request {
     private String table;
     private List<Dish> foods; //list of food orders
 
-    public Request() {
+    public  Request()
+    {
+
     }
 
     public Request(String phone, String name, List<Dish> foods,String table,String status) {

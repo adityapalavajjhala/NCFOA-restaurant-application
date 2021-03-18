@@ -1,7 +1,5 @@
 package com.example.ncfoa_restaurant_application.admin.adapters;
 
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,47 +10,48 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ncfoa_restaurant_application.admin.model.Dish;
-import com.example.ncfoa_restaurant_application.admin.model.Request;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-
-public class DishListAdapter extends FirebaseRecyclerAdapter<Dish, DishListAdapter.DishListViewHolder>
-{
-    public DishListAdapter(@NonNull FirebaseRecyclerOptions<Dish> options2)
-    {
-        super(options2);
-    }
 
 
-    @Override
-    protected void onBindViewHolder(@NonNull DishListAdapter.DishListViewHolder holder, int position, @NonNull Dish dish) {
-        holder.dishname.setText(dish.getDishName());
-        holder.quantity.setText((int) dish.getQuantity());
-        holder.price.setText((int) dish.getPrice());
+import java.util.List;
 
+
+public class DishListAdapter extends RecyclerView.Adapter<DishListAdapter.DishListViewHolder> {
+
+    private final List<Dish> dishItemList;
+
+    DishListAdapter(List<Dish> dishItemList) {
+        this.dishItemList = dishItemList;
     }
 
     @NonNull
     @Override
-    public DishListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewc)
-    {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.dishes_singlerow,parent,false);
+    public DishListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.dishes_singlerow, viewGroup, false);
         return new DishListViewHolder(view);
     }
 
-    static class DishListViewHolder extends RecyclerView.ViewHolder
-    {
-        TextView dishname,quantity,price;
+    @Override
+    public void onBindViewHolder(@NonNull DishListViewHolder dishListViewHolder, int i) {
+        Dish dishItem = dishItemList.get(i);
+        dishListViewHolder.dishlistname.setText(dishItem.getDishName());
+        dishListViewHolder.dishquantity.setText((int) dishItem.getQuantity());
+        dishListViewHolder.dishprice.setText((int) dishItem.getPrice());
 
-        public DishListViewHolder(@NonNull View itemView)
-        {
+    }
+
+    @Override
+    public int getItemCount() {
+        return dishItemList.size();
+    }
+
+     static class DishListViewHolder extends RecyclerView.ViewHolder {
+        TextView dishlistname,dishquantity,dishprice;
+        DishListViewHolder(View itemView) {
             super(itemView);
-            dishname=itemView.findViewById(R.id.dishnametext);
-            quantity=itemView.findViewById(R.id.dishquantitytext);
-            price=itemView.findViewById(R.id.dishpricetext);
+            dishlistname = itemView.findViewById(R.id.dishnametext);
+            dishquantity = itemView.findViewById(R.id.dishquantitytext);
+            dishprice= itemView.findViewById(R.id.dishpricetext);
 
         }
     }
-
-
 }
