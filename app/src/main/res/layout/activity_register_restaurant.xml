@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".admin.activities.RegisterRestaurant">
+
+
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="NCFOA Restaurant"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/bannerDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Admin restaurant App"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/restaurantName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Restaurant Name"
+        android:textColor="#000"
+        android:textSize="24dp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:textColor="#000"
+        android:textSize="24dp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:inputType="textPassword"
+        android:ellipsize="start"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="Password"
+        android:textColor="#000"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/registerRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="300dp"
+        android:height="70dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#0ED689"
+        android:text="Register "
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

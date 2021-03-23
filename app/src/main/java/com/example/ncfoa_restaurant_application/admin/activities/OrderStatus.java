@@ -45,6 +45,7 @@ public class OrderStatus extends  AppCompatActivity{
                 }
 
                 orderAdapter = new OrderAdapter(orderList);
+
                 recyclerView.setAdapter(orderAdapter);
             }
 

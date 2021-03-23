@@ -18,7 +18,6 @@ import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder>
 {
-    private final RecyclerView.RecycledViewPool viewPool = new RecyclerView.RecycledViewPool();
     private final List<Request> orderList;
 
     public OrderAdapter(List<Request> orderList) {
@@ -40,16 +39,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         orderViewHolder.status.setText(request.getStatus());
         orderViewHolder.table.setText(request.getTable());
 
+
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(orderViewHolder.dishRecyclerView.getContext(),
                 LinearLayoutManager.VERTICAL,
                 false
         );
         layoutManager.setInitialPrefetchItemCount(request.getFoods().size());
+        orderViewHolder.dishRecyclerView.setLayoutManager(layoutManager);
 
         DishListAdapter dishListAdapter = new DishListAdapter(request.getFoods());
-        orderViewHolder.dishRecyclerView.setLayoutManager(layoutManager);
         orderViewHolder.dishRecyclerView.setAdapter(dishListAdapter);
-        orderViewHolder.dishRecyclerView.setRecycledViewPool(viewPool);
 
     }
 

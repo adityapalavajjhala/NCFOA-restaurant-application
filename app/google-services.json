@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1036350236955",
-    "project_id": "ncfoa-application",
-    "storage_bucket": "ncfoa-application.appspot.com"
+    "project_number": "912744590734",
+    "firebase_url": "https://testing-menuitems-restaurant-default-rtdb.firebaseio.com",
+    "project_id": "testing-menuitems-restaurant",
+    "storage_bucket": "testing-menuitems-restaurant.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1036350236955:android:7e3cd159d46f16b36ccbbe",
+        "mobilesdk_app_id": "1:912744590734:android:f5cc744066437428f2c8df",
         "android_client_info": {
           "package_name": "com.example.ncfoa_restaurant_application"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1036350236955-domibct0n7nlrt4eb6tbv16vtpiki4k3.apps.googleusercontent.com",
+          "client_id": "912744590734-261qfmvc41pt1vko3m018v4golilkp7p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCq9C0z88LXOQxsfoIgQ_W2Ur4RmPwSTh8"
+          "current_key": "AIzaSyDSE7qkLg47be9_YgwXxPh64wtsHP4uQJo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1036350236955-domibct0n7nlrt4eb6tbv16vtpiki4k3.apps.googleusercontent.com",
+              "client_id": "912744590734-261qfmvc41pt1vko3m018v4golilkp7p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

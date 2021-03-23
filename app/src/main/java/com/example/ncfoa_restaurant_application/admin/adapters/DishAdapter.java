@@ -38,10 +38,8 @@ public class DishAdapter extends FirebaseRecyclerAdapter<Dish, DishAdapter.myvie
     {
         holder.dishname.setText(model.getDishName());
         holder.price.setText((int) model.getPrice());
-        holder.description.setText(model.getDescription());
         holder.type.setText(model.getType());
 
-        Glide.with(holder.img.getContext()).load(model.getPurl()).into(holder.img);
 
         holder.edit.setOnClickListener(view -> {
             final DialogPlus dialogPlus=DialogPlus.newDialog(holder.img.getContext())
@@ -60,10 +58,8 @@ public class DishAdapter extends FirebaseRecyclerAdapter<Dish, DishAdapter.myvie
 
             Button submit=myview.findViewById(R.id.usubmit);
 
-            purl.setText(model.getPurl());
             dishname.setText(model.getDishName());
             price.setText((int) model.getPrice());;
-            description.setText(model.getDescription());
             type.setText(model.getType());
 
             dialogPlus.show();

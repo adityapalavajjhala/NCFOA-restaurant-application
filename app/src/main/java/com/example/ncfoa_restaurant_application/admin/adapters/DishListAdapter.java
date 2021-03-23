@@ -19,15 +19,15 @@ public class DishListAdapter extends RecyclerView.Adapter<DishListAdapter.DishLi
 
     private final List<Dish> dishItemList;
 
-    DishListAdapter(List<Dish> dishItemList) {
+    public DishListAdapter(List<Dish> dishItemList) {
         this.dishItemList = dishItemList;
     }
 
     @NonNull
     @Override
     public DishListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.dishes_singlerow, viewGroup, false);
-        return new DishListViewHolder(view);
+        View viewc = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.dishes_singlerow, viewGroup, false);
+        return new DishListViewHolder(viewc);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class DishListAdapter extends RecyclerView.Adapter<DishListAdapter.DishLi
 
      static class DishListViewHolder extends RecyclerView.ViewHolder {
         TextView dishlistname,dishquantity,dishprice;
-        DishListViewHolder(View itemView) {
+        public DishListViewHolder(View itemView) {
             super(itemView);
             dishlistname = itemView.findViewById(R.id.dishnametext);
             dishquantity = itemView.findViewById(R.id.dishquantitytext);

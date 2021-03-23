@@ -12,18 +12,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NCFOArestaurantapplication">
-        <activity android:name=".admin.activities.AdminMenuManagementActivity">
+        <activity android:name=".admin.activities.ForgotPassword"></activity>
+        <activity
+            android:name=".admin.activities.BaseActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".admin.activities.RegisterRestaurant" />
+        <activity android:name=".admin.activities.AdminMenuManagementActivity" />
         <activity android:name=".admin.activities.MenuScrollActivity" />
         <activity android:name=".admin.activities.DishAddDataActivity" />
-        <activity android:name=".admin.activities.CategoryScrollActivity"/>
-        <activity android:name=".admin.activities.CategoryAddDataActivity"/>
-        <activity android:name=".admin.activities.OrderStatus"/>
-        <activity android:name=".admin.activities.KitchenStaff"/>
+        <activity android:name=".admin.activities.CategoryScrollActivity" />
+        <activity android:name=".admin.activities.CategoryAddDataActivity" />
+        <activity android:name=".admin.activities.OrderStatus" />
+        <activity android:name=".admin.activities.KitchenStaff" />
+        <activity android:name=".admin.activities.WaiterStaff" />
+        <activity android:name=".admin.activities.Login"/>
     </application>
 
 </manifest>
