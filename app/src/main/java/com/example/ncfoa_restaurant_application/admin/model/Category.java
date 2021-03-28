@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+// the Category model class
 public class Category {
 
     String categoryName;

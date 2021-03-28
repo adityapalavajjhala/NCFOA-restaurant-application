@@ -1,5 +1,8 @@
 package com.example.ncfoa_restaurant_application.admin.model;
 
+
+// the Dish model class
+
 public class Dish {
     String dishid;
     String dishname;

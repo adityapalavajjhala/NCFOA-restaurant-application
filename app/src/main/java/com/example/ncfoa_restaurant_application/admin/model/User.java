@@ -1,5 +1,7 @@
 package com.example.ncfoa_restaurant_application.admin.model;
 
+// the User model class
+
 public class User {
 
     private String Name;

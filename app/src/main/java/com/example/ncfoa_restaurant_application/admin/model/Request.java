@@ -2,6 +2,8 @@ package com.example.ncfoa_restaurant_application.admin.model;
 
 import java.util.List;
 
+// the Order-Request model class
+
 public class Request {
     private String usernumber;
     private String username;

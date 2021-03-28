@@ -2,6 +2,8 @@ package com.example.ncfoa_restaurant_application.admin.model;
 
 import java.util.List;
 
+// the Restaurant model class
+
 public class Restaurant {
 
     public String fullName;
