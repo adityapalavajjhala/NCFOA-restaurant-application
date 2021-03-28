@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ncfoa_restaurant_application.R;
+import com.example.ncfoa_restaurant_application.admin.model.Category;
+import com.example.ncfoa_restaurant_application.admin.model.Request;
 import com.example.ncfoa_restaurant_application.admin.model.Restaurant;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -98,7 +100,7 @@ public class RegisterRestaurant extends AppCompatActivity implements View.OnClic
         mAuth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful()){
-                        Restaurant restaurant = new Restaurant(restaurantName, email);
+                        Restaurant restaurant = new Restaurant(restaurantName, email,null,null,null);
                         FirebaseDatabase.getInstance().getReference("Restaurants")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(restaurant).addOnCompleteListener(task1 -> {

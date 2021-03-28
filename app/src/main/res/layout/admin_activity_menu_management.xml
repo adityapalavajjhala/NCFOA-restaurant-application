@@ -1,92 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.ncfoa_restaurant_application.admin.activities.AdminMenuManagementActivity">
-
-
-    <Button
-        android:id="@+id/addcategory"
-        android:layout_width="120dp"
+    
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Category"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="startAddCategory"
-        app:layout_constraintVertical_bias="0.533" />
+        android:gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/addmenu"
-        android:layout_width="120dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_of_active_orders"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/active_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/active_orders"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:padding="25dp"
+            android:background="@drawable/border"/>
+        
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD MENU ITEM"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="startAddMenu"
-        app:layout_constraintVertical_bias="0.533" />
+        android:layout_marginStart="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/no_of_completed_orders"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/no_of_tables"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/no_of_categories"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/no_of_dishes"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/completed_orders_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/completed_orders_count"/>
+
+        <TextView
+            android:id="@+id/tables_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/tables_count"/>
+
+        <TextView
+            android:id="@+id/categories_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/categories_count"/>
+
+        <TextView
+            android:id="@+id/dishes_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/dishes_count"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+        
+    
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|bottom"
+    android:layout_marginBottom="15dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <Button
+            android:id="@+id/categories"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="0dp"
+            android:onClick="startCategory"
+            android:text="@string/categories" />
+
+        <View
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_width="0dp" />
+
+        <Button
+            android:id="@+id/dishes"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:onClick="startDishes"
+            android:layout_marginEnd="0dp"
+            android:text="@string/dishes"
+            />
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="15dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
 
     <Button
         android:id="@+id/orders"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:onClick="startOrder"
-        android:text="Orders"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
+        android:layout_marginStart="0dp"
+        android:text="@string/orders" />
+
+    <View
+        android:layout_weight="1"
+        android:layout_height="60dp"
+        android:layout_width="0dp" />
 
     <Button
-        android:id="@+id/kitchenstaff"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/kitchen_staff"
+        android:layout_width="150dp"
         android:onClick="startPreparation"
-        android:text="Kitchen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
+        android:layout_height="60dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/kitchen_staff"
+        />
 
-    <Button
-        android:id="@+id/waiterstaff"
-        android:layout_width="120dp"
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startDelivery"
-        android:text="Waiter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <Button
+            android:id="@+id/payment_verification"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/payment_verification"
+            android:onClick="startPaymentVerification"/>
+
+        <View
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_width="0dp" />
+
+        <Button
+            android:id="@+id/waiter_cashier"
+            android:layout_width="150dp"
+            android:onClick="startDelivery"
+            android:layout_height="60dp"
+            android:text="@string/waiter_cashier" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <Button
+            android:id="@+id/table_qr"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:onClick="startTableQR"
+            android:text="@string/tables_qr" />
+
+        <View
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_width="0dp" />
+
+        <Button
+            android:id="@+id/support"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/support"
+            android:onClick="startSupport"/>
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textStyle="bold"
         android:backgroundTint="@color/colorAccent"
+        android:text="Logout"
         android:textColor="#fff"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        android:textStyle="bold"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

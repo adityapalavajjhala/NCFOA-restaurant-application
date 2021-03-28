@@ -1,57 +1,82 @@
 package com.example.ncfoa_restaurant_application.admin.adapters;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ncfoa_restaurant_application.R;
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ncfoa_restaurant_application.admin.activities.CategoryScrollActivity;
+import com.example.ncfoa_restaurant_application.admin.activities.DishScrollActivity;
+import com.example.ncfoa_restaurant_application.admin.activities.DummyActivity;
+import com.example.ncfoa_restaurant_application.admin.model.Category;
 import com.example.ncfoa_restaurant_application.admin.model.Dish;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 
-
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
-
-public class DishListAdapter extends RecyclerView.Adapter<DishListAdapter.DishListViewHolder> {
-
-    private final List<Dish> dishItemList;
-
-    public DishListAdapter(List<Dish> dishItemList) {
-        this.dishItemList = dishItemList;
+public class DishListAdapter extends FirebaseRecyclerAdapter<Dish, DishListAdapter.DishViewHolder>
+{
+    public DishListAdapter(FirebaseRecyclerOptions<Dish> options2) {
+        super(options2);
     }
+
+    @Override
+    protected void onBindViewHolder(@NonNull final DishViewHolder holder, final int position, @NonNull final Dish dish)
+    {
+        holder.dishnametext.setText(dish.getDishName());
+        holder.dishquantitytext.setText(dish.getDishName());
+        holder.dishpricetext.setText((int) dish.getPrice());
+    }
+
 
     @NonNull
     @Override
-    public DishListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View viewc = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.dishes_singlerow, viewGroup, false);
-        return new DishListViewHolder(viewc);
+    public DishViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewc)
+    {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.dishes_singlerow,parent,false);
+        return new DishViewHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull DishListViewHolder dishListViewHolder, int i) {
-        Dish dishItem = dishItemList.get(i);
-        dishListViewHolder.dishlistname.setText(dishItem.getDishName());
-        dishListViewHolder.dishquantity.setText((int) dishItem.getQuantity());
-        dishListViewHolder.dishprice.setText((int) dishItem.getPrice());
 
-    }
 
-    @Override
-    public int getItemCount() {
-        return dishItemList.size();
-    }
 
-     static class DishListViewHolder extends RecyclerView.ViewHolder {
-        TextView dishlistname,dishquantity,dishprice;
-        public DishListViewHolder(View itemView) {
+    static class DishViewHolder extends RecyclerView.ViewHolder
+    {
+        TextView dishnametext,dishquantitytext,dishpricetext;
+
+        public DishViewHolder(@NonNull View itemView)
+        {
             super(itemView);
-            dishlistname = itemView.findViewById(R.id.dishnametext);
-            dishquantity = itemView.findViewById(R.id.dishquantitytext);
-            dishprice= itemView.findViewById(R.id.dishpricetext);
-
+            dishnametext= itemView.findViewById(R.id.dishnametext);
+            dishquantitytext= itemView.findViewById(R.id.dishquantitytext);
+            dishpricetext= itemView.findViewById(R.id.dishpricetext);
         }
+
     }
 }

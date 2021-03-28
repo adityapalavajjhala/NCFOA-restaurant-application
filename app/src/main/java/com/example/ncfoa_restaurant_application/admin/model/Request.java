@@ -3,8 +3,8 @@ package com.example.ncfoa_restaurant_application.admin.model;
 import java.util.List;
 
 public class Request {
-    private String phone;
-    private String name;
+    private String usernumber;
+    private String username;
     private String status;
     private String table;
     private List<Dish> foods; //list of food orders
@@ -14,12 +14,12 @@ public class Request {
 
     }
 
-    public Request(String phone, String name, List<Dish> foods,String table,String status) {
-        this.phone = phone;
-        this.name = name;
+    public Request(String usernumber, String username, List<Dish> foods,String table,String status) {
+        this.usernumber = usernumber;
+        this.username = username;
         this.foods = foods;
         this.table= table;
-        this.status = status; //Default is 0, 0: Placed, 1: Prepared , 2: Delivered
+        this.status = status; //Default is : Placed, 1: Prepared , 2: Delivered
     }
 
     public String getStatus() {
@@ -31,19 +31,19 @@ public class Request {
     }
 
     public String getPhone() {
-        return phone;
+        return usernumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhone(String usernumber) {
+        this.usernumber = usernumber;
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.username = username;
     }
 
     public List<Dish> getFoods() {
@@ -58,7 +58,7 @@ public class Request {
         return table;
     }
 
-    public void setTable(String  table) {
+    public void setTable(String table) {
             this.table = table;
     }
 

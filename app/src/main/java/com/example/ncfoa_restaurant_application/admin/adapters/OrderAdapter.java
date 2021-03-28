@@ -48,8 +48,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         layoutManager.setInitialPrefetchItemCount(request.getFoods().size());
         orderViewHolder.dishRecyclerView.setLayoutManager(layoutManager);
 
-        DishListAdapter dishListAdapter = new DishListAdapter(request.getFoods());
-        orderViewHolder.dishRecyclerView.setAdapter(dishListAdapter);
+       // DishListAdapter dishListAdapter = new DishListAdapter(request.getFoods());
+       // orderViewHolder.dishRecyclerView.setAdapter(dishListAdapter);
 
     }
 

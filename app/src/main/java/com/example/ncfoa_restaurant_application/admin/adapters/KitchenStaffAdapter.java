@@ -38,7 +38,7 @@ public class KitchenStaffAdapter extends FirebaseRecyclerAdapter<Request, Kitche
     @Override
     protected void onBindViewHolder(@NonNull KitchenStaffAdapter.StaffOrderViewHolder holder, int position, @NonNull Request request) {
 
-        holder.phone.setText(request.getPhone());
+        holder.phone.setText( request.getPhone());
         holder.name.setText(request.getName());
         holder.status.setText(request.getStatus());
         holder.table.setText(request.getTable());

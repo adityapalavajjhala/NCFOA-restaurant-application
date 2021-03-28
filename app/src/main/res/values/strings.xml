@@ -1,5 +1,23 @@
 <resources>
     <string name="app_name">NCFOA-restaurant-application</string>
+    <string name="no_of_active_orders">No. of Active orders</string>
+    <string name="active_orders">Active orders</string>
+    <string name="no_of_completed_orders">No. of Completed orders :</string>
+    <string name="no_of_tables">No. of Tables :</string>
+    <string name="no_of_categories">No. of Categories :</string>
+    <string name="no_of_dishes">No. of Dishes :</string>
+    <string name="completed_orders_count">Completed orders count</string>
+    <string name="tables_count">tables count</string>
+    <string name="categories_count">categories count</string>
+    <string name="dishes_count">dishes count</string>
+    <string name="categories">Categories</string>
+    <string name="dishes">Dishes</string>
+    <string name="orders">Orders</string>
+    <string name="kitchen_staff">Kitchen staff</string>
+    <string name="payment_verification">payment verification</string>
+    <string name="waiter_cashier">Waiter / cashier</string>
+    <string name="tables_qr">tables / qr</string>
+    <string name="support">Support</string>
     <string-array name="employee_types">
         <item>Waiter</item>
         <item>Chef</item>
